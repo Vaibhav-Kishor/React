@@ -15,6 +15,7 @@
  * take care of port number
  * Consistent Hasing algorithim
  * zero config bundler
+ * Tree shaking -> removing unwanted code
  * super fast build algorithim
  */
 
