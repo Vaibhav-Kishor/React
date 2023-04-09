@@ -1,3 +1,4 @@
+<!-- same stuff using react  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,20 +8,31 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="root"></div>
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <div id="header">Header</div>
+
+    <!-- Root is a place where React run  -->
+    <div id="root"> Not Rendered </div>
+
+    <div id="footer">Footer</div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script> 
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
  <script>
 
+    // React is a global variable which comes from the injected react js files
     // React.createElement takes three argument ->> tag,object,content
     // React.createElement creaate object with the help of arguments 
-    // 
-    const heading = React.createElement("h1",{},"Hello React");
+    const heading = React.createElement("h1",{
+        id:"title" // all the tag atttribute and value comes here
+    },"Hello React");
+
+    // generally we have only one root
     const root = ReactDOM.createRoot(document.getElementById('root'));
 
     // Passing react element(react element is object) inside the root
     // render method takes react element(object) and modify the DOM
+    // render method override the everything, whatever exist within the root present.
     root.render(heading);
 
     console.log(heading); // gives object

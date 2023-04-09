@@ -1,0 +1,53 @@
+<!-- multiple element with parent element -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Creating structure like this using React within root-->
+    <!-- <div id="container">
+        <h1>Heading1</h1>
+        <h2>Heading2</h2>
+    </div> -->
+
+    <!-- Root is a place where React run  -->
+    <div id="root"> Not Rendered </div>
+
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+ <script>
+
+     
+
+    const heading1 = React.createElement("h1",{
+        id:"title1" // all the tag atttribute and value comes here
+    },"Heading 1");
+
+    const heading2 = React.createElement("h2",{
+        id:"title2"
+    },"Heading 2");
+
+    const container = React.createElement("div",{
+        id:"container"
+    },[heading1,heading2]) // heading1 and heading 2, html element in the form of object
+
+    // generally we have only one root
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+
+    // Passing react element(react element is object) inside the root
+    // render method takes react element(object) and modify the DOM
+    // render method override the everything, whatever exist within the root present.
+    root.render(container);
+
+ 
+
+ </script>
+
+</body>
+</html>
